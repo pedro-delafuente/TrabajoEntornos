@@ -33,7 +33,35 @@ public class ProyectoAnimales {
         System.out.println(piolin);
         piolin.crecer(0.100, 2);
         System.out.println(piolin);
-  
+        
+        Pez nemo = new Pez("PEZ PAYASO", true,
+                3, "NEMO", LocalDate.of(2020, Month.MARCH, 12),
+                false, 0.05, 2.5);
+
+        Pez pez2 = new Pez("PEZ PAYASO", true,
+                3, "PEPE", LocalDate.of(2020, Month.MARCH, 12),
+                false, 0.05, 2.5);
+
+        nemo.nacer();
+        nemo.emitirSonido();
+        System.out.println(nemo);
+        nemo.crecer(0.100, 2);
+        System.out.println(nemo);
+        System.out.println(nemo.getNombre());
+
+        Animal[] listaAnimales = new Animal[4];
+
+        listaAnimales[0] = piolin;
+        listaAnimales[1] = nemo;
+        listaAnimales[2] = pajaro2;
+        listaAnimales[3] = pez2;
+
+        for (int i = 0; i < listaAnimales.length; i++) {
+            System.out.println(listaAnimales[i]);
+            listaAnimales[i].emitirSonido();
+        }
+
     }
 
 }
+
