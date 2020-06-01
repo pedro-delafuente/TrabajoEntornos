@@ -1,1 +1,39 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package proyectoanimales;
 
+import java.time.LocalDate;
+import java.time.Month;
+
+/**
+ *
+ * @author pedro
+ */
+public class ProyectoAnimales {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+
+        Pajaro piolin = new Pajaro(true, "CANARIO", 1,
+                2, "PIOLIN", LocalDate.of(2020, Month.JANUARY, 12),
+                false, 0.100, 5);
+
+        Pajaro pajaro2 = new Pajaro(true, "CANARIO", 1,
+                2, "pajaro", LocalDate.of(2020, Month.JANUARY, 12),
+                false, 0.100, 5);
+
+        piolin.nacer();
+        piolin.emitirSonido();
+        System.out.println(piolin);
+        piolin.crecer(0.100, 2);
+        System.out.println(piolin);
+  
+    }
+
+}
