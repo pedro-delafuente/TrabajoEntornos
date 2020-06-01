@@ -1,0 +1,110 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package proyectoanimales;
+
+import java.time.LocalDate;
+
+/**
+ *
+ * @author pedro
+ */
+public abstract class Animal {
+
+    private int id;
+    private String nombre;
+    private LocalDate fechaNacimiento;
+    private boolean hembra;
+    private double peso;
+    private double altura;
+    private boolean vivo;
+
+    public Animal(int id, String nombre, LocalDate fechaNacimiento,
+            boolean hembra, double peso, double altura) {
+        this.id = id;
+        this.nombre = nombre;
+        this.fechaNacimiento = fechaNacimiento;
+        this.hembra = hembra;
+        this.peso = peso;
+        this.altura = altura;
+        this.vivo = true;
+    }
+
+    public Animal(int id, String nombre, LocalDate fechaNacimiento, boolean hembra) {
+        this.id = id;
+        this.nombre = nombre;
+        this.fechaNacimiento = fechaNacimiento;
+        this.hembra = hembra;
+        this.vivo = true;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public LocalDate getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public boolean isHembra() {
+        return hembra;
+    }
+
+    public double getPeso() {
+        return peso;
+    }
+
+    public void setPeso(double peso) {
+        this.peso = peso;
+    }
+
+    public double getAltura() {
+        return altura;
+    }
+
+    public void setAltura(double altura) {
+        this.altura = altura;
+    }
+
+    public boolean isVivo() {
+        return vivo;
+    }
+
+    public void setVivo(boolean vivo) {
+        this.vivo = vivo;
+    }
+
+    public void nacer() {
+        System.out.println("He nacido");
+    }
+
+    public void crecer(double incrementarPeso, double incrementarAltura) {
+
+        peso = peso + incrementarPeso;
+        altura = altura + incrementarAltura;
+        System.out.println("He crecido");
+    }
+
+    public void morir() {
+        this.vivo = false;
+        System.out.println("He muerto");
+    }
+
+    public abstract void emitirSonido();
+
+    @Override
+    public String toString() {
+        return "Animal{" + "id=" + id
+                + ", nombre=" + nombre
+                + ", fechaNacimiento=" + fechaNacimiento
+                + ", hembra=" + hembra
+                + ", peso=" + peso + ", altura=" + altura
+                + ", vivo=" + vivo + '}';
+    }
+}
