@@ -1,0 +1,64 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package proyectoanimales;
+
+import java.time.LocalDate;
+
+/**
+ *
+ * @author pedro
+ */
+public class Pajaro extends Animal {
+
+    private boolean vuela;
+    private String especie;
+    private double longitudPico;
+
+    public Pajaro(boolean vuela, String especie,
+            double longitudPico,
+            int id,
+            String nombre,
+            LocalDate fechaNacimiento,
+            boolean hembra,
+            double peso,
+            double altura) {
+        super(id, nombre, fechaNacimiento, hembra, peso, altura);
+        this.vuela = vuela;
+        this.especie = especie;
+        this.longitudPico = longitudPico;
+    }
+
+    public boolean isVuela() {
+        return vuela;
+    }
+
+    public String getEspecie() {
+        return especie;
+    }
+
+    public double getLongitudPico() {
+        return longitudPico;
+    }
+
+    public void setLongitudPico(double longitudPico) {
+        this.longitudPico = longitudPico;
+    }
+
+    @Override
+    public void emitirSonido() {
+        System.out.println("PIO PIO");
+    }
+
+    @Override
+    public String toString() {
+        return "Pajaro{"
+                + "vuela=" + vuela
+                + ", especie=" + especie
+                + ", longitudPico=" + longitudPico
+                + " " + super.toString() + " }";
+    }
+
+}
